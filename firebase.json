@@ -1,0 +1,39 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "functions": {
+    "source": "functions",
+    "params": {
+      "ADMIN_EMAILS": "wingwise2024@gmail.com",
+      "GITHUB_REPO": "okitoki/ogiTarot",
+      "GITHUB_WORKFLOW": "firebase-deploy.yml",
+      "GITHUB_BRANCH": "main"
+    }
+  },
+  "hosting": {
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/api/interpret",
+        "function": "interpret"
+      },
+      {
+        "source": "/api/admin/sync",
+        "function": "syncAdminClaims"
+      },
+      {
+        "source": "/sitemap.xml",
+        "function": "sitemap"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

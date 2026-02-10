@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ogitarot-73c9d.web.app/sitemap.xml

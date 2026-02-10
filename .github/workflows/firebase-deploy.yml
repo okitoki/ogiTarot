@@ -1,0 +1,28 @@
+name: Deploy Firebase Hosting
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy Hosting
+        run: npx firebase deploy --only hosting --project ogitarot-73c9d
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

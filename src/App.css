@@ -1,0 +1,124 @@
+.main-container h1,
+.main-container h2,
+.main-container p {
+  text-align: left;
+}
+/* TarotSpread main container for card explanation, spread, tarot info */
+.tarot-main-container {
+  max-width: 1100px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 16px 32px;
+}
+.tarot-main-container h1 {
+  text-align: left;
+}
+/* Hide mobile menu button by default (desktop) */
+.mobile-menu-btn {
+  display: none !important;
+}
+
+.main-container {
+  max-width: 1100px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  padding: 16px 16px 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    max-width: 100%;
+    padding: 12px 8px 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  .main-container {
+    padding: 8px 2vw 16px;
+  }
+  h1 {
+    font-size: 1.6em;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  .card,
+  .blog-card,
+  .tarot-card {
+    padding: 1em;
+  }
+}
+@media (max-width: 700px) {
+  .mobile-menu-btn {
+    display: inline-block !important;
+  }
+  .nav-menu {
+    display: none !important;
+  }
+  .nav-menu.nav-menu-open {
+    display: flex !important;
+  }
+}
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes toast-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

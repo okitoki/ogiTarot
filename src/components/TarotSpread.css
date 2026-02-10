@@ -1,0 +1,131 @@
+/* TarotSpread.css - 모든 타로 스프레드 관련 스타일 */
+
+.tarot-mobile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .tarot-mobile-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    max-width: 100vw;
+  }
+}
+
+.tarot-card-reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+  transform: translateY(6px) scale(0.98);
+}
+
+.tarot-card-reveal.is-animating {
+  animation: tarotCardReveal 360ms ease-out forwards;
+  animation-fill-mode: both;
+}
+
+.tarot-markdown h1,
+.tarot-markdown h2,
+.tarot-markdown h3 {
+  margin: 16px 0 8px;
+  line-height: 1.3;
+  color: #111;
+}
+.tarot-markdown h1 {
+  font-size: 20px;
+}
+.tarot-markdown h2 {
+  font-size: 18px;
+}
+.tarot-markdown h3 {
+  font-size: 16px;
+}
+.tarot-markdown p {
+  margin: 8px 0;
+  color: #111;
+}
+.tarot-markdown ul,
+.tarot-markdown ol {
+  margin: 8px 0 8px 20px;
+  padding: 0;
+}
+.tarot-markdown li {
+  margin: 4px 0;
+}
+.tarot-markdown hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 16px 0;
+}
+.tarot-markdown blockquote {
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-left: 3px solid #e5e5e5;
+  background: #f7f7f7;
+  border-radius: 8px;
+  color: #555;
+}
+.tarot-result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+.tarot-result-card {
+  border: 1px solid #eee;
+  background: #fafafa;
+  border-radius: 16px;
+  padding: 14px;
+}
+.tarot-result-card h4 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 900;
+}
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #111;
+  animation:
+    typing 2.6s steps(30, end) forwards,
+    blink 0.8s step-end 3,
+    caretHide 0s linear 2.6s forwards;
+  max-width: 0;
+}
+@keyframes typing {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 100%;
+  }
+}
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #111;
+  }
+}
+@keyframes caretHide {
+  to {
+    border-color: transparent;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tarot-card-reveal,
+  .tarot-card-reveal.is-animating {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .typing-text {
+    animation: none;
+    border-right: none;
+    max-width: none;
+  }
+}
