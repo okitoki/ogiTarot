@@ -280,11 +280,6 @@ export default function Blog({
                   >
                     {post.title}
                   </Link>
-                  <div style={{ fontSize: 12, opacity: 0.6 }}>
-                    {post.createdAt
-                      ? post.createdAt.toLocaleString()
-                      : "작성 시간 확인 중"}
-                  </div>
                   {isAdmin && (
                     <div style={{ display: "flex", gap: 6 }}>
                       <Link

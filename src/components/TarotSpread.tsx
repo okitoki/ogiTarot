@@ -840,15 +840,14 @@ export default function TarotSpreadPick() {
               textAlign: "center",
             }}
           >
-            지금 고민 중인 상황이나 마음을 간단히 적어주세요
+            지금 고민을 한 줄로 적어주세요
           </div>
           <input
             ref={topicInputRef}
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
-            placeholder="예) 이직을 고민 중인데 계속 망설여져요. / 연락이 끊긴 사람이 신경 쓰여요 / 결정을 미루고 있는 게 맞는지 알고 싶어요 / 그냥 요즘 제 상태가 궁금해요"
+            placeholder="예) 이직을 고민 중인데 계속 망설여져요. "
             style={{
-              width: "100%",
               padding: "10px 12px 8px 12px",
               border: "none",
               borderBottom: "2.5px solid #ff4d00",
@@ -1103,6 +1102,27 @@ export default function TarotSpreadPick() {
                   style={uiBtn(false)}
                 >
                   닫기
+                </button>
+                <button
+                  onClick={() => {
+                    // 모든 상태 리셋
+                    setIsResultOpen(false);
+                    setPickedIds([]);
+                    setPickedSet(new Set());
+                    setPickedCards([]);
+                    setResultText("");
+                    setErrorText("");
+                    setTopic("");
+                    setShowInitialCards(true);
+                    setIsDeckVisible(false);
+                    setIsInterpreting(false);
+                    setCanInterpret(false);
+                    setDrawCount(5);
+                    setSeed(randomSeedString());
+                  }}
+                  style={uiBtn(false)}
+                >
+                  처음부터 다시 타로보기
                 </button>
               </div>
             </div>
